@@ -4,6 +4,7 @@ import {Heading} from "./widgets/heading"
 
 
 let w = new Window(window.innerHeight-10,'100%');
+let d = new Date();
 
 let lbl1= new Heading(w);
 lbl1.text = "Button Demo";
@@ -14,4 +15,11 @@ lbl1.move(10,20);
 let btn = new Button(w);
 btn.tabindex = 2;
 btn.fontSize = 14
-btn.move(12, 50)
+btn.move(12, 50);
+
+btn.onClick(() => {
+    lbl1.text = `Time the button was clicked: ${btn.viewTime()}`;
+})
+
+btn.moveState();
+btn.idleupState();
